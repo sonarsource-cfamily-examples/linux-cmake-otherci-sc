@@ -21,9 +21,7 @@ export PATH=$HOME/.sonar/sonar-scanner-$SONAR_SCANNER_VERSION-linux/bin:$PATH
 # Setup the build system
 rm -rf build
 mkdir build
-cd build
-cmake ..
-cd ..
+cmake -B build
 
 # Build inside the build-wrapper
 build-wrapper-linux-x86-64 --out-dir $BUILD_WRAPPER_OUT_DIR cmake --build build/ --config Release
